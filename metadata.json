@@ -1,0 +1,6 @@
+{
+  "name": "Phyllis Wangui Campaign",
+  "description": "Official campaign website for Wakili Phyllis Wangui, candidate for Kiambu County Woman Representative.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

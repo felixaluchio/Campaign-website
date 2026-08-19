@@ -1,0 +1,107 @@
+{
+  "entities": {
+    "communityIssue": {
+      "title": "Community Issue",
+      "description": "Public issue reports submitted by Kiambu County citizens.",
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "Location or Ward of the issue"
+        },
+        "title": {
+          "type": "string",
+          "description": "Short title or summary of the issue"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the issue"
+        },
+        "status": {
+          "type": "string",
+          "description": "Current resolution status (e.g. UNDER REVIEW, IN PROGRESS, RESOLVED)"
+        },
+        "issueCode": {
+          "type": "string",
+          "description": "Unique identifier tracking code"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        }
+      },
+      "required": ["location", "title", "description", "status", "issueCode", "createdAt"]
+    },
+    "event": {
+      "title": "Campaign Event",
+      "description": "Past events and photo gallery items",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "location": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "photos": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "date", "category"]
+    },
+    "video": {
+      "title": "Campaign Video",
+      "description": "Campaign videos with YouTube embeds",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "date": { "type": "string" },
+        "youtubeUrl": { "type": "string" },
+        "youtubeId": { "type": "string" },
+        "description": { "type": "string" },
+        "duration": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "category", "date", "youtubeUrl"]
+    },
+    "upcomingEvent": {
+      "title": "Upcoming Event",
+      "description": "Upcoming scheduled campaign rallies and town halls",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "location": { "type": "string" },
+        "locationName": { "type": "string" },
+        "address": { "type": "string" },
+        "constituency": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "startTime": { "type": "string" },
+        "registrationRequired": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "date", "category", "description"]
+    }
+  },
+  "firestore": {
+    "/community_issues/{issueId}": {
+      "schema": "communityIssue",
+      "description": "Public community issue reports"
+    },
+    "/events/{eventId}": {
+      "schema": "event",
+      "description": "Past campaign events & photo gallery"
+    },
+    "/videos/{videoId}": {
+      "schema": "video",
+      "description": "Campaign video library"
+    },
+    "/upcoming_events/{eventId}": {
+      "schema": "upcomingEvent",
+      "description": "Upcoming campaign schedule"
+    }
+  }
+}

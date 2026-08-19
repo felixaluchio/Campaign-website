@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-primary-green: #087A32;
+  --color-deep-green: #045522;
+  --color-campaign-red: #C91F2C;
+  --color-brand-black: #111111;
+  --color-soft-bg: #F6F7F4;
+  --color-light-green: #EAF5ED;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-soft-bg)] text-[var(--color-brand-black)] font-sans antialiased selection:bg-[var(--color-primary-green)] selection:text-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold;
+  }
+}
+

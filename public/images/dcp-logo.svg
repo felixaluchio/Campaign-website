@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <g transform="translate(10, 5)">
+    <!-- Braided Rope Border around Hand/Ear -->
+    <!-- Pattern of braided segments -->
+    <g transform="translate(68, 85)" stroke-width="5" stroke-linecap="round" fill="none">
+      <!-- Outer twisted rope segments -->
+      <!-- Green rope coils -->
+      <path d="M -60,-20 C -64,-5 -60,15 -52,32" stroke="#005A36" stroke-dasharray="7 5" stroke-width="6"/>
+      <path d="M -52,32 C -40,55 -20,70 5,74" stroke="#005A36" stroke-dasharray="7 5" stroke-width="6"/>
+      <path d="M 5,74 C 30,76 52,65 65,48" stroke="#005A36" stroke-dasharray="7 5" stroke-width="6"/>
+      <path d="M -60,-20 C -56,-45 -40,-65 -15,-72" stroke="#005A36" stroke-dasharray="7 5" stroke-width="6"/>
+      <path d="M -15,-72 C 10,-76 38,-65 55,-45" stroke="#005A36" stroke-dasharray="7 5" stroke-width="6"/>
+      
+      <!-- Brown/Orange rope coils interleaved -->
+      <path d="M -58,-15 C -62,0 -58,20 -50,37" stroke="#9C4B18" stroke-dasharray="7 5" stroke-width="6" stroke-dashoffset="6"/>
+      <path d="M -50,37 C -38,60 -16,73 10,76" stroke="#9C4B18" stroke-dasharray="7 5" stroke-width="6" stroke-dashoffset="6"/>
+      <path d="M 10,76 C 35,77 56,64 68,43" stroke="#9C4B18" stroke-dasharray="7 5" stroke-width="6" stroke-dashoffset="6"/>
+      <path d="M -58,-15 C -54,-40 -38,-60 -10,-68" stroke="#9C4B18" stroke-dasharray="7 5" stroke-width="6" stroke-dashoffset="6"/>
+      <path d="M -10,-68 C 15,-72 42,-60 58,-40" stroke="#9C4B18" stroke-dasharray="7 5" stroke-width="6" stroke-dashoffset="6"/>
+
+      <!-- Rope tick texture marks -->
+      <g stroke="#9C4B18" stroke-width="2.5">
+        <line x1="-58" y1="-28" x2="-66" y2="-22" />
+        <line x1="-63" y1="-10" x2="-70" y2="-4" />
+        <line x1="-62" y1="10" x2="-69" y2="16" />
+        <line x1="-54" y1="28" x2="-60" y2="35" />
+        <line x1="-42" y1="46" x2="-47" y2="54" />
+        <line x1="-24" y1="60" x2="-28" y2="68" />
+        <line x1="-4" y1="68" x2="-6" y2="77" />
+        <line x1="16" y1="69" x2="16" y2="78" />
+        <line x1="36" y1="64" x2="38" y2="72" />
+        <line x1="52" y1="52" x2="56" y2="59" />
+        <line x1="-48" y1="-48" x2="-54" y2="-43" />
+        <line x1="-32" y1="-62" x2="-36" y2="-55" />
+        <line x1="-12" y1="-70" x2="-14" y2="-62" />
+        <line x1="10" y1="-72" x2="10" y2="-63" />
+        <line x1="30" y1="-67" x2="28" y2="-58" />
+        <line x1="48" y1="-54" x2="44" y2="-46" />
+      </g>
+      <g stroke="#005A36" stroke-width="2.5">
+        <line x1="-61" y1="-19" x2="-68" y2="-13" />
+        <line x1="-63" y1="0" x2="-70" y2="6" />
+        <line x1="-58" y1="19" x2="-65" y2="26" />
+        <line x1="-48" y1="37" x2="-54" y2="45" />
+        <line x1="-33" y1="53" x2="-38" y2="61" />
+        <line x1="-14" y1="65" x2="-17" y2="73" />
+        <line x1="6" y1="69" x2="5" y2="78" />
+        <line x1="26" y1="67" x2="27" y2="75" />
+        <line x1="44" y1="59" x2="47" y2="66" />
+        <line x1="60" y1="44" x2="64" y2="50" />
+        <line x1="-40" y1="-55" x2="-45" y2="-49" />
+        <line x1="-22" y1="-67" x2="-25" y2="-59" />
+        <line x1="-1" y1="-72" x2="-2" y2="-63" />
+        <line x1="20" y1="-70" x2="19" y2="-61" />
+        <line x1="39" y1="-61" x2="36" y2="-52" />
+      </g>
+    </g>
+
+    <!-- Hand Cupping Ear Illustration -->
+    <g transform="translate(68, 85)" fill="none" stroke="#8B4513" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Wrist & Base of Hand -->
+      <path d="M -18,65 L -16,50 C -16,40 -12,32 -6,26" stroke-width="2.2" />
+      <path d="M 12,65 L 10,54 C 8,42 4,35 0,30" stroke-width="2.2" />
+      <!-- Palm shading lines -->
+      <path d="M -15,58 L 9,58 M -14,62 L 10,62 M -12,54 L 7,54 M -10,50 L 5,50" stroke-width="1.2" stroke="#A0522D" />
+
+      <!-- Fingers raised cupping behind ear -->
+      <!-- Index Finger -->
+      <path d="M -22,12 C -26,-2 -26,-20 -20,-38 C -18,-45 -14,-46 -11,-42 C -8,-36 -7,-22 -7,-8" stroke-width="2.2" fill="#FFFDF8"/>
+      <!-- Index knuckles & hatching -->
+      <path d="M -20,-15 C -17,-16 -13,-15 -10,-12 M -21,-28 C -18,-29 -14,-28 -12,-25" stroke-width="1.2" stroke="#A0522D" />
+      
+      <!-- Middle Finger (highest) -->
+      <path d="M -11,-42 C -10,-52 -5,-62 0,-62 C 5,-62 7,-52 6,-38 C 5,-25 4,-12 4,-2" stroke-width="2.2" fill="#FFFDF8"/>
+      <path d="M -5,-35 C -1,-36 3,-36 5,-33 M -6,-48 C -2,-49 3,-49 4,-45" stroke-width="1.2" stroke="#A0522D" />
+
+      <!-- Ring Finger -->
+      <path d="M 6,-46 C 10,-54 16,-54 18,-46 C 20,-36 18,-20 16,-6" stroke-width="2.2" fill="#FFFDF8"/>
+      <path d="M 9,-30 C 12,-31 15,-30 17,-27 M 10,-42 C 13,-43 16,-41 17,-37" stroke-width="1.2" stroke="#A0522D" />
+
+      <!-- Little Finger -->
+      <path d="M 18,-38 C 22,-44 28,-42 28,-34 C 28,-22 25,-10 22,4" stroke-width="2.2" fill="#FFFDF8"/>
+
+      <!-- Palm & Thumb contour -->
+      <path d="M -22,12 C -24,20 -20,32 -16,42" stroke-width="2.2" />
+      <!-- Hatching on palm edge -->
+      <path d="M -21,18 L -16,22 M -20,24 L -15,28 M -19,30 L -14,34 M -18,36 L -13,40" stroke-width="1" stroke="#A0522D" />
+
+      <!-- The Ear (Right side of hand) -->
+      <!-- Outer Helix -->
+      <path d="M 3,-22 C 12,-28 26,-28 35,-18 C 45,-6 46,12 42,26 C 38,40 24,48 12,46 C 2,44 0,34 2,24 C 4,14 10,8 14,8" stroke-width="2.6" fill="#FFFDF8" />
+      
+      <!-- Inner Concha, Antihelix & Tragus -->
+      <path d="M 30,-8 C 34,2 35,16 30,24 C 25,32 16,34 10,28 C 6,24 8,16 12,14 C 18,12 24,6 22,-2 C 20,-10 14,-14 6,-14" stroke-width="2" stroke="#8B4513" fill="#FDF6EE" />
+      
+      <!-- Tragus & Lobule details -->
+      <path d="M 10,18 C 8,20 6,18 7,15" stroke-width="2" />
+      <path d="M 22,34 C 20,40 14,42 8,38" stroke-width="1.6" />
+
+      <!-- Detailed Ear Shading / Hatching -->
+      <g stroke="#B86B35" stroke-width="1">
+        <path d="M 28,-14 C 32,-10 35,-4 36,4" />
+        <path d="M 32,2 C 34,8 34,14 31,20" />
+        <path d="M 24,10 C 26,14 26,18 24,22" />
+        <path d="M 16,22 C 18,25 18,28 16,30" />
+        <path d="M 12,-18 C 16,-18 20,-16 24,-12" />
+        <path d="M 16,-12 C 20,-12 22,-8 24,-4" />
+      </g>
+    </g>
+
+    <!-- Wordmark: DCP -->
+    <g transform="translate(155, 30)">
+      <!-- D -->
+      <path d="M 0,10 L 32,10 C 54,10 68,22 68,46 C 68,70 54,82 32,82 L 0,82 Z M 21,30 L 21,62 L 30,62 C 40,62 46,56 46,46 C 46,36 40,30 30,30 Z" fill="#005A36" />
+      
+      <!-- C -->
+      <path d="M 125,28 C 119,16 108,10 93,10 C 72,10 56,26 56,46 C 56,66 72,82 93,82 C 108,82 119,76 125,64 L 107,56 C 104,62 99,65 93,65 C 82,65 76,57 76,46 C 76,35 82,27 93,27 C 99,27 104,30 107,36 Z" fill="#005A36" />
+
+      <!-- P -->
+      <path d="M 132,10 L 165,10 C 182,10 194,20 194,37 C 194,54 182,64 165,64 L 153,64 L 153,82 L 132,82 Z M 153,27 L 153,47 L 163,47 C 170,47 174,43 174,37 C 174,31 170,27 163,27 Z" fill="#005A36" />
+    </g>
+
+    <!-- Slogan: SKIZA WAKENYA -->
+    <g transform="translate(142, 128)">
+      <text x="0" y="24" font-family="'Trebuchet MS', 'Arial Black', Impact, sans-serif" font-weight="900" font-style="italic" font-size="27" fill="#9C4B18" letter-spacing="1.5">
+        SKIZA WAKENYA
+      </text>
+    </g>
+  </g>
+</svg>

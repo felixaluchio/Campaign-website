@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /community_issues/{issueId} {
+      allow read: if true;
+      allow create: if request.resource.data.location is string
+                    && request.resource.data.title is string
+                    && request.resource.data.description is string
+                    && request.resource.data.status is string
+                    && request.resource.data.issueCode is string;
+      allow update, delete: if true;
+    }
+    match /events/{eventId} {
+      allow read, write: if true;
+    }
+    match /videos/{videoId} {
+      allow read, write: if true;
+    }
+    match /upcoming_events/{eventId} {
+      allow read, write: if true;
+    }
+  }
+}
+
