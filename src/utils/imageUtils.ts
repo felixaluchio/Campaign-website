@@ -5,6 +5,7 @@
 import heroPortraitImg from '../assets/images/images/phyllis-wangui-hero.jpg';
 import bioPortraitImg from '../assets/images/images/phyllis-wangui-bio-updated.jpg';
 import herStoryCardImg from '../assets/images/images/phyllis-wangui-bio-2.jpg';
+import whatGuidesHerImg from '../assets/images/regenerated_image_1787160412071.jpg';
 
 export const DEFAULT_CAMPAIGN_FALLBACK = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200';
 export const DEFAULT_HERO_IMAGE = heroPortraitImg || '/images/phyllis-wangui-hero.jpg';
@@ -15,7 +16,7 @@ export const DEFAULT_BIO_PORTRAIT = bioPortraitImg || '/images/phyllis-wangui-bi
 export const DEFAULT_HER_STORY_PHOTO = herStoryCardImg || '/images/phyllis-wangui-bio-2.jpg';
 
 // 2. What Guides Her Card: Focused on leadership/values presentation
-export const DEFAULT_WHAT_GUIDES_HER_PHOTO = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200';
+export const DEFAULT_WHAT_GUIDES_HER_PHOTO = whatGuidesHerImg || 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200';
 
 // 3. Rooted in Kiambu Card: Focused on local grassroots outreach
 export const DEFAULT_ROOTED_IN_KIAMBU_PHOTO = 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=1200';
