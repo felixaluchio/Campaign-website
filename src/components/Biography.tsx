@@ -324,12 +324,12 @@ export function Biography() {
             src={rootedInKiambuSrc} 
             fallbackSrc={DEFAULT_ROOTED_IN_KIAMBU_PHOTO}
             alt="Rooted in Kiambu - Local grassroots outreach" 
-            className="absolute inset-0 w-full h-full object-cover object-top opacity-100 filter contrast-105"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50 z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-black/30 to-transparent z-0"></div>
 
           <div className="grid md:grid-cols-2 gap-12 relative z-10">
-            <div>
+            <div className="bg-transparent">
               <h3 className="text-3xl font-serif font-bold text-white mb-6 drop-shadow">
                 {candidateBiography.connection.heading}
               </h3>
@@ -348,7 +348,7 @@ export function Biography() {
               </Link>
               <Link
                 to="/vision-manifesto"
-                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full font-bold transition-all flex items-center justify-center sm:justify-start gap-2"
+                className="w-full sm:w-auto bg-black/50 hover:bg-black/70 backdrop-blur-md border-2 border-white/30 text-white px-8 py-4 rounded-full font-bold transition-all flex items-center justify-center sm:justify-start gap-2"
               >
                 Explore Her Vision
               </Link>

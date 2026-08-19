@@ -11,7 +11,7 @@ import {
   isValidImageSrc 
 } from '../utils/imageUtils';
 
-const LOCAL_STORAGE_KEY = 'phyllis_campaign_images_v3';
+const LOCAL_STORAGE_KEY = 'phyllis_campaign_images_v5';
 
 export const DEFAULT_IMAGES: Record<string, string> = {
   heroPortrait: DEFAULT_HERO_IMAGE,
