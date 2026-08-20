@@ -23,7 +23,7 @@ export const DEFAULT_WHAT_GUIDES_HER_PHOTO = whatGuidesHerImg || '/images/photo5
 export const DEFAULT_ROOTED_IN_KIAMBU_PHOTO = rootedInKiambuImg || 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=1200';
 
 // 4. Vision Photo 5: Leadership team walk
-export const DEFAULT_VISION_PHOTO5 = '/images/photo5.jfif';
+export const DEFAULT_VISION_PHOTO5 = whatGuidesHerImg || '/images/photo5.jpg';
 
 /**
  * Converts an uploaded File into a persistent Base64 Data URL string

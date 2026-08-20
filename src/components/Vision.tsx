@@ -92,7 +92,7 @@ export function Vision() {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className="group relative"
               >
-                <div className="text-5xl font-serif font-bold text-[var(--color-light-green)] group-hover:text-[var(--color-primary-green)] transition-colors mb-6 select-none">
+                <div className="text-5xl font-serif font-bold text-[var(--color-primary-green)] opacity-100 mb-6 select-none">
                   {theme.number}
                 </div>
                 <div className="w-8 h-1 bg-[var(--color-campaign-red)] mb-6 transition-all group-hover:w-16"></div>
@@ -114,7 +114,7 @@ export function Vision() {
         <div className="absolute inset-0 z-0">
           <ImageWithFallback 
             src={visionPhoto5}
-            fallbackSrc="/images/photo5.jpg"
+            fallbackSrc={DEFAULT_VISION_PHOTO5}
             alt="Wakili Phyllis Wangui walking with community leaders and campaign team"
             className="w-full h-full object-cover object-center"
           />
