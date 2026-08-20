@@ -3,12 +3,13 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useImageStore } from '../context/ImageContext';
 import { ImageWithFallback } from './common/ImageWithFallback';
-import { DEFAULT_HERO_IMAGE } from '../utils/imageUtils';
+import { heroBannerBg, PLACEHOLDER_HERO_BANNER } from '../utils/imageUtils';
 import heroBadgeLogo from '../assets/images/regenerated_image_1786708658494.png';
 
 export function Hero() {
   const { getImage } = useImageStore();
-  const heroImage = getImage('heroPortrait', DEFAULT_HERO_IMAGE);
+  // Dedicated, isolated image variable applied ONLY to the top Hero section
+  const currentHeroBg = getImage('heroBannerBg', heroBannerBg);
 
   return (
     <div className="relative min-h-[100dvh] bg-[var(--color-soft-bg)] overflow-hidden flex items-center pt-24 pb-12 lg:pb-0">
@@ -105,11 +106,11 @@ export function Hero() {
               <div 
                 className="relative rounded-t-[120px] rounded-b-[32px] md:rounded-t-[180px] md:rounded-b-[64px] overflow-hidden shadow-2xl border-[6px] border-white aspect-[4/5] md:aspect-[3/4] lg:h-[750px] bg-gray-100 z-10"
               >
-                {/* Hero Portrait Image */}
+                {/* Hero Section Dedicated Image / Background (Isolated via heroBannerBg) */}
                 <ImageWithFallback 
-                  src={heroImage} 
-                  fallbackSrc={DEFAULT_HERO_IMAGE}
-                  alt="Wakili Phyllis Wangui" 
+                  src={currentHeroBg} 
+                  fallbackSrc={heroBannerBg}
+                  alt="Wakili Phyllis Wangui - Kiambu Leadership" 
                   className="absolute inset-0 w-full h-full object-cover object-top"
                 />
                                 

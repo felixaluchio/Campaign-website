@@ -66,72 +66,70 @@ export function Manifesto() {
   const activeSection = manifestoSections.find(s => s.id === activeTab);
 
   return (
-    <section className="bg-[var(--color-soft-bg)] py-24 sm:py-32" id="manifesto">
+    <section className="bg-[var(--color-soft-bg)] py-16 sm:py-24 lg:py-32" id="manifesto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* B1: Manifesto Introduction */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="w-8 h-[2px] bg-[var(--color-campaign-red)] rounded-full"></span>
-              <span className="uppercase tracking-[0.2em] text-xs font-bold text-[var(--color-primary-green)]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-6 sm:gap-8">
+          <div className="max-w-2xl min-w-0">
+            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+              <span className="w-6 sm:w-8 h-[2px] bg-[var(--color-campaign-red)] rounded-full"></span>
+              <span className="uppercase tracking-[0.2em] text-[11px] sm:text-xs font-bold text-[var(--color-primary-green)]">
                 The Manifesto
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[var(--color-brand-black)] mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[var(--color-brand-black)] mb-4 sm:mb-6 leading-tight">
               A practical agenda for a better Kiambu.
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed italic border-l-2 border-[var(--color-primary-green)] pl-4">
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed italic border-l-2 border-[var(--color-primary-green)] pl-3 sm:pl-4">
               Our manifesto is built on a clear commitment: to transform legislative oversight into real, measurable empowerment for every citizen of Kiambu. Through structured policy and relentless advocacy, we are shaping a practical agenda that prioritizes people, progress, and prosperity.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 shrink-0 w-full sm:w-auto">
             <a 
               href="/documents/manifesto.pdf"
               download="Kiambu-Manifesto.pdf"
-              className="inline-flex justify-center items-center gap-2 bg-[var(--color-brand-black)] text-white px-6 py-3 rounded-full font-bold hover:bg-black transition-colors shadow-lg cursor-pointer"
+              className="w-full sm:w-auto min-h-[44px] inline-flex justify-center items-center gap-2 bg-[var(--color-brand-black)] text-white px-5 sm:px-6 py-3 rounded-full text-sm sm:text-base font-bold hover:bg-black transition-colors shadow-lg cursor-pointer text-center"
             >
-              <Download className="w-5 h-5" />
-              Download Full Manifesto
+              <Download className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+              <span>Download Full Manifesto</span>
             </a>
             <button 
               type="button"
               onClick={() => window.open('/documents/manifesto.pdf', '_blank')}
-              className="inline-flex justify-center items-center gap-2 bg-white border border-gray-200 text-[var(--color-brand-black)] px-6 py-3 rounded-full font-bold hover:border-[var(--color-primary-green)] hover:text-[var(--color-primary-green)] transition-all shadow-sm cursor-pointer"
+              className="w-full sm:w-auto min-h-[44px] inline-flex justify-center items-center gap-2 bg-white border border-gray-200 text-[var(--color-brand-black)] px-5 sm:px-6 py-3 rounded-full text-sm sm:text-base font-bold hover:border-[var(--color-primary-green)] hover:text-[var(--color-primary-green)] transition-all shadow-sm cursor-pointer text-center"
             >
-              <ExternalLink className="w-5 h-5" />
-              Read Online
+              <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+              <span>Read Online</span>
             </button>
           </div>
         </div>
 
         {/* Manifesto Content */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
           
           {/* B2: Manifesto Navigation */}
-          <div className="lg:col-span-4 lg:sticky lg:top-24">
-            <div className="flex overflow-x-auto lg:flex-col gap-2 pb-4 lg:pb-0 scrollbar-hide">
+          <div className="lg:col-span-4 lg:sticky lg:top-24 w-full min-w-0">
+            <div className="flex overflow-x-auto lg:flex-col gap-2 pb-3 lg:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
               {manifestoSections.map((section) => (
                 <button
                   key={section.id}
                   onClick={() => setActiveTab(section.id)}
-                  className={`flex-shrink-0 lg:w-full text-left px-6 py-4 rounded-xl font-bold transition-all flex items-center justify-between group ${
+                  className={`flex-shrink-0 lg:w-full text-left px-4 sm:px-6 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-bold transition-all flex items-center justify-between group min-h-[44px] ${
                     activeTab === section.id
                       ? 'bg-[var(--color-primary-green)] text-white shadow-md'
                       : 'bg-white text-gray-600 hover:bg-gray-50 border border-transparent hover:border-gray-100'
                   }`}
                 >
                   <span className="whitespace-nowrap">{section.title}</span>
-                  <ChevronRight className={`hidden lg:block w-5 h-5 transition-transform ${activeTab === section.id ? 'text-white' : 'text-gray-400 group-hover:text-[var(--color-primary-green)]'}`} />
+                  <ChevronRight className={`hidden lg:block w-5 h-5 transition-transform shrink-0 ml-2 ${activeTab === section.id ? 'text-white' : 'text-gray-400 group-hover:text-[var(--color-primary-green)]'}`} />
                 </button>
               ))}
             </div>
-            
-
           </div>
 
           {/* B3 & B4: Manifesto Content */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-8 w-full min-w-0">
             <AnimatePresence mode="wait">
               {activeSection && (
                 <motion.div
@@ -140,39 +138,39 @@ export function Manifesto() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100"
+                  className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 shadow-xl border border-gray-100 min-w-0"
                 >
-                  <div className="mb-10 pb-8 border-b border-gray-100">
-                    <span className="text-4xl font-serif font-bold text-[var(--color-light-green)] block mb-4">
+                  <div className="mb-6 sm:mb-10 pb-6 sm:pb-8 border-b border-gray-100">
+                    <span className="text-3xl sm:text-4xl font-serif font-bold text-[var(--color-light-green)] block mb-2 sm:mb-4">
                       {activeSection.number}
                     </span>
-                    <h3 className="text-3xl sm:text-4xl font-serif font-bold text-[var(--color-brand-black)] mb-4">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[var(--color-brand-black)] mb-3 sm:mb-4">
                       {activeSection.title}
                     </h3>
-                    <p className="text-xl text-gray-600 leading-relaxed">
+                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
                       {activeSection.introduction}
                     </p>
                   </div>
                   
-                  <div className="space-y-12">
+                  <div className="space-y-8 sm:space-y-12">
                     {/* Problem -> Approach */}
-                    <div className="grid sm:grid-cols-2 gap-8">
-                      <div className="bg-gray-50 p-6 rounded-2xl">
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-[var(--color-campaign-red)] mb-4 flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[var(--color-campaign-red)]"></span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+                      <div className="bg-gray-50 p-4 sm:p-6 rounded-2xl">
+                        <h4 className="text-xs sm:text-sm uppercase tracking-widest font-bold text-[var(--color-campaign-red)] mb-3 sm:mb-4 flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-[var(--color-campaign-red)] shrink-0"></span>
                           The Challenge
                         </h4>
-                        <p className="text-gray-700 leading-relaxed">
+                        <p className="text-xs sm:text-sm sm:leading-relaxed text-gray-700 leading-relaxed">
                           {activeSection.challenge}
                         </p>
                       </div>
                       
-                      <div className="bg-[var(--color-primary-green)]/5 p-6 rounded-2xl border border-[var(--color-primary-green)]/10">
-                        <h4 className="text-sm uppercase tracking-widest font-bold text-[var(--color-primary-green)] mb-4 flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[var(--color-primary-green)]"></span>
+                      <div className="bg-[var(--color-primary-green)]/5 p-4 sm:p-6 rounded-2xl border border-[var(--color-primary-green)]/10">
+                        <h4 className="text-xs sm:text-sm uppercase tracking-widest font-bold text-[var(--color-primary-green)] mb-3 sm:mb-4 flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-[var(--color-primary-green)] shrink-0"></span>
                           Our Approach
                         </h4>
-                        <p className="text-gray-700 leading-relaxed">
+                        <p className="text-xs sm:text-sm sm:leading-relaxed text-gray-700 leading-relaxed">
                           {activeSection.approach}
                         </p>
                       </div>
@@ -180,28 +178,28 @@ export function Manifesto() {
 
                     {/* Action */}
                     <div>
-                      <h4 className="text-sm uppercase tracking-widest font-bold text-[var(--color-brand-black)] mb-6 border-b border-gray-100 pb-2">
+                      <h4 className="text-xs sm:text-sm uppercase tracking-widest font-bold text-[var(--color-brand-black)] mb-4 sm:mb-6 border-b border-gray-100 pb-2">
                         What We Will Do
                       </h4>
-                      <ul className="space-y-4">
+                      <ul className="space-y-3 sm:space-y-4">
                         {activeSection.actions.map((action, idx) => (
-                          <li key={idx} className="flex items-start gap-4">
-                            <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-500 shrink-0 mt-0.5">
+                          <li key={idx} className="flex items-start gap-3 sm:gap-4">
+                            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gray-100 flex items-center justify-center text-[10px] sm:text-xs font-bold text-gray-500 shrink-0 mt-0.5">
                               {idx + 1}
                             </div>
-                            <span className="text-gray-700 leading-relaxed">{action}</span>
+                            <span className="text-xs sm:text-sm text-gray-700 leading-relaxed">{action}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* Outcome */}
-                    <div className="bg-[var(--color-brand-black)] text-white p-8 rounded-2xl relative overflow-hidden">
+                    <div className="bg-[var(--color-brand-black)] text-white p-5 sm:p-7 md:p-8 rounded-2xl relative overflow-hidden">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-primary-green)] opacity-20 blur-2xl rounded-full"></div>
-                      <h4 className="text-sm uppercase tracking-widest font-bold text-[var(--color-light-green)] mb-4 relative z-10">
+                      <h4 className="text-xs sm:text-sm uppercase tracking-widest font-bold text-[var(--color-light-green)] mb-3 sm:mb-4 relative z-10">
                         Expected Impact
                       </h4>
-                      <p className="text-lg leading-relaxed relative z-10">
+                      <p className="text-sm sm:text-base md:text-lg leading-relaxed relative z-10">
                         {activeSection.outcome}
                       </p>
                     </div>

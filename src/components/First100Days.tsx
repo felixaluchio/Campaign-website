@@ -80,11 +80,11 @@ export function First100Days() {
   };
 
   return (
-    <section className="bg-gray-50 relative overflow-hidden pt-32 pb-24" id="100-days">
+    <section className="bg-gray-50 relative overflow-hidden pt-16 sm:pt-24 lg:pt-32 pb-16 sm:pb-24" id="100-days">
       
       {/* Background Graphic */}
-      <div className="absolute top-0 right-0 w-full h-full opacity-[0.03] pointer-events-none overflow-hidden flex items-start justify-end pr-10 pt-10">
-        <span className="text-[40vw] font-serif font-bold leading-none tracking-tighter mix-blend-multiply select-none text-[var(--color-primary-green)]">
+      <div className="absolute top-0 right-0 w-full h-full opacity-[0.03] pointer-events-none overflow-hidden flex items-start justify-end pr-4 sm:pr-10 pt-6 sm:pt-10">
+        <span className="text-[35vw] sm:text-[40vw] font-serif font-bold leading-none tracking-tighter mix-blend-multiply select-none text-[var(--color-primary-green)]">
           100
         </span>
       </div>
@@ -97,27 +97,27 @@ export function First100Days() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mb-24"
+          className="max-w-3xl mb-12 sm:mb-16 lg:mb-24"
         >
-          <div className="flex items-center gap-4 mb-6">
-            <span className="w-8 h-[2px] bg-[var(--color-campaign-red)] rounded-full"></span>
-            <span className="uppercase tracking-[0.2em] text-xs font-bold text-[var(--color-primary-green)]">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <span className="w-6 sm:w-8 h-[2px] bg-[var(--color-campaign-red)] rounded-full"></span>
+            <span className="uppercase tracking-[0.2em] text-[11px] sm:text-xs font-bold text-[var(--color-primary-green)]">
               The First 100 Days
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-[var(--color-brand-black)] mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[var(--color-brand-black)] mb-6 sm:mb-8 leading-tight">
             100 Days of Listening. Acting. Delivering.
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed italic border-l-4 border-[var(--color-primary-green)] pl-6">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed italic border-l-4 border-[var(--color-primary-green)] pl-4 sm:pl-6">
             {first100DaysData.introduction}
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 xl:gap-24">
           
           {/* Main Content Area: Timeline */}
-          <div className="lg:col-span-8">
-            <div className="space-y-20">
+          <div className="lg:col-span-8 w-full min-w-0">
+            <div className="space-y-12 sm:space-y-16 lg:space-y-20">
               {first100DaysData.phases.map((phase, phaseIdx) => (
                 <motion.div 
                   key={phase.id}
@@ -125,53 +125,53 @@ export function First100Days() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="relative"
+                  className="relative min-w-0"
                 >
                   {/* Timeline connector */}
                   {phaseIdx !== first100DaysData.phases.length - 1 && (
-                    <div className="absolute top-16 bottom-[-5rem] left-[1.15rem] w-px bg-gray-200 -z-10 hidden sm:block"></div>
+                    <div className="absolute top-16 bottom-[-3rem] sm:bottom-[-4rem] lg:bottom-[-5rem] left-5 sm:left-[1.15rem] w-px bg-gray-200 -z-10 hidden sm:block"></div>
                   )}
                   
-                  <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8 mb-10">
-                    <div className="bg-[var(--color-brand-black)] text-white text-xs font-bold uppercase tracking-widest px-4 py-3 rounded-full shrink-0">
+                  <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-10">
+                    <div className="bg-[var(--color-brand-black)] text-white text-[11px] sm:text-xs font-bold uppercase tracking-widest px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full shrink-0 shadow-sm">
                       {phase.period}
                     </div>
-                    <div>
-                      <h3 className="text-3xl font-serif font-bold text-[var(--color-primary-green)] mb-4">
+                    <div className="min-w-0">
+                      <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[var(--color-primary-green)] mb-2 sm:mb-3">
                         {phase.title}
                       </h3>
-                      <p className="text-lg text-gray-600 leading-relaxed">
+                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                         {phase.description}
                       </p>
                     </div>
                   </div>
 
                   {/* A7: 100-Day Action Cards */}
-                  <div className="space-y-6 sm:pl-16">
+                  <div className="space-y-4 sm:space-y-6 pl-0 sm:pl-10 lg:pl-16 min-w-0">
                     {phase.actions.map((action, actionIdx) => {
                       const status = getStatusConfig(action.status);
                       
                       return (
-                        <div key={actionIdx} className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                          <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
-                            <h4 className="text-xl font-bold text-[var(--color-brand-black)]">
+                        <div key={actionIdx} className="bg-white rounded-2xl p-5 sm:p-7 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow min-w-0">
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between items-start gap-3 sm:gap-4 mb-4">
+                            <h4 className="text-lg sm:text-xl font-bold text-[var(--color-brand-black)] leading-snug">
                               {action.title}
                             </h4>
-                            <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${status.bg} ${status.color}`}>
+                            <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider ${status.bg} ${status.color} shrink-0`}>
                               {status.icon}
                               {action.status}
                             </div>
                           </div>
                           
-                          <p className="text-gray-600 mb-6 leading-relaxed">
+                          <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6 leading-relaxed">
                             {action.description}
                           </p>
                           
-                          <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
-                            <h5 className="text-xs uppercase tracking-widest font-bold text-gray-500 mb-2">
+                          <div className="bg-gray-50 p-3.5 sm:p-4 rounded-xl border border-gray-100">
+                            <h5 className="text-[10px] sm:text-xs uppercase tracking-widest font-bold text-gray-500 mb-1.5">
                               Expected Output
                             </h5>
-                            <p className="text-[var(--color-brand-black)] font-medium">
+                            <p className="text-sm sm:text-base text-[var(--color-brand-black)] font-medium leading-relaxed">
                               {action.output}
                             </p>
                           </div>
@@ -185,25 +185,25 @@ export function First100Days() {
           </div>
 
           {/* Sidebar Area: Tracker & Accountability */}
-          <div className="lg:col-span-4 space-y-10">
+          <div className="lg:col-span-4 space-y-6 sm:space-y-8 lg:space-y-10 min-w-0">
             
             {/* A8: Progress Tracker */}
-            <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm sticky top-32">
-              <h3 className="text-xl font-serif font-bold text-[var(--color-brand-black)] mb-6">
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 border border-gray-100 shadow-sm static lg:sticky lg:top-32 min-w-0">
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-[var(--color-brand-black)] mb-4 sm:mb-6">
                 Progress Tracker
               </h3>
               
-              <div className="mb-8">
-                <div className="flex justify-between items-end mb-3">
-                  <span className="text-4xl font-serif font-bold text-[var(--color-primary-green)] leading-none">
+              <div className="mb-6 sm:mb-8">
+                <div className="flex justify-between items-end mb-2.5 sm:mb-3">
+                  <span className="text-3xl sm:text-4xl font-serif font-bold text-[var(--color-primary-green)] leading-none">
                     {progressPercent}%
                   </span>
-                  <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">
+                  <span className="text-xs sm:text-sm font-bold text-gray-400 uppercase tracking-wider">
                     {first100DaysData.currentDay === 0 ? 'Planning' : `${first100DaysData.currentDay} / 100 Days`}
                   </span>
                 </div>
                 
-                <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                <div className="w-full h-2.5 sm:h-3 bg-gray-100 rounded-full overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: `${progressPercent}%` }}
@@ -213,51 +213,51 @@ export function First100Days() {
                 </div>
               </div>
               
-              <ul className="space-y-4 mb-8">
-                <li className="flex justify-between items-center text-sm">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 divide-y divide-gray-50">
+                <li className="flex justify-between items-center text-xs sm:text-sm pt-2 sm:pt-0">
                   <span className="text-gray-500">Days Elapsed</span>
                   <span className="font-bold text-[var(--color-brand-black)]">{first100DaysData.currentDay}</span>
                 </li>
-                <li className="flex justify-between items-center text-sm">
+                <li className="flex justify-between items-center text-xs sm:text-sm pt-2 sm:pt-0">
                   <span className="text-gray-500">Actions Completed</span>
                   <span className="font-bold text-[var(--color-brand-black)]">{first100DaysData.completedActions} / {first100DaysData.totalActions}</span>
                 </li>
               </ul>
 
               {/* K: Trust & Transparency */}
-              <div className="pt-6 border-t border-gray-100 text-xs text-gray-400 text-center">
+              <div className="pt-4 sm:pt-6 border-t border-gray-100 text-[11px] sm:text-xs text-gray-400 text-center">
                 Last updated: {first100DaysData.lastUpdated}
               </div>
             </div>
 
             {/* A9: Accountability Principle */}
-            <div className="bg-[var(--color-primary-green)] text-white rounded-3xl p-8 shadow-lg relative overflow-hidden">
+            <div className="bg-[var(--color-primary-green)] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden min-w-0">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-deep-green)] rounded-full mix-blend-multiply opacity-50 blur-xl"></div>
-              <h3 className="text-2xl font-serif font-bold mb-4 relative z-10">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold mb-3 sm:mb-4 relative z-10">
                 We Will Report Back.
               </h3>
-              <p className="text-[var(--color-light-green)] leading-relaxed relative z-10">
+              <p className="text-sm sm:text-base text-[var(--color-light-green)] leading-relaxed relative z-10">
                 "A core promise to return to the people with results, maintaining transparency at every stage of the 100-day journey."
               </p>
             </div>
 
             {/* A10: Downloadable Plan */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full">
               <a 
                 href="/documents/100-day-plan.pdf"
                 download="100-day-plan.pdf"
-                className="w-full inline-flex justify-center items-center gap-2 bg-[var(--color-brand-black)] text-white px-6 py-4 rounded-xl font-bold hover:bg-black transition-colors shadow-sm cursor-pointer"
+                className="w-full min-h-[48px] inline-flex justify-center items-center gap-2 bg-[var(--color-brand-black)] text-white px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold hover:bg-black transition-colors shadow-sm cursor-pointer text-center"
               >
-                <Download className="w-5 h-5" />
-                Download the 100-Day Plan
+                <Download className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                <span>Download 100-Day Plan</span>
               </a>
               <button 
                 type="button"
                 onClick={() => setIsPdfModalOpen(true)}
-                className="w-full inline-flex justify-center items-center gap-2 bg-white text-[var(--color-brand-black)] border border-gray-200 px-6 py-4 rounded-xl font-bold hover:border-[var(--color-primary-green)] hover:text-[var(--color-primary-green)] transition-colors shadow-sm cursor-pointer"
+                className="w-full min-h-[48px] inline-flex justify-center items-center gap-2 bg-white text-[var(--color-brand-black)] border border-gray-200 px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold hover:border-[var(--color-primary-green)] hover:text-[var(--color-primary-green)] transition-colors shadow-sm cursor-pointer text-center"
               >
-                <ExternalLink className="w-5 h-5" />
-                Read Online
+                <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                <span>Read Online</span>
               </button>
             </div>
 

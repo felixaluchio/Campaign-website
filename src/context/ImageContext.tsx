@@ -1,24 +1,45 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { 
   convertFileToBase64, 
+  heroBannerBg,
+  coreValuesQuoteBg,
+  DEFAULT_HERO_BG_IMAGE,
   DEFAULT_HERO_IMAGE, 
+  DEFAULT_WHAT_GUIDES_HER_CARD_IMAGE,
+  DEFAULT_WHAT_GUIDES_HER_PHOTO,
+  DEFAULT_CORE_VALUES_CARD_IMAGE,
   DEFAULT_BIO_PORTRAIT, 
   DEFAULT_HER_STORY_PHOTO, 
-  DEFAULT_WHAT_GUIDES_HER_PHOTO,
   DEFAULT_ROOTED_IN_KIAMBU_PHOTO,
   DEFAULT_VISION_PHOTO5,
   DEFAULT_CAMPAIGN_FALLBACK,
   isValidImageSrc 
 } from '../utils/imageUtils';
 
-const LOCAL_STORAGE_KEY = 'phyllis_campaign_images_v6';
+const LOCAL_STORAGE_KEY = 'phyllis_campaign_images_v11';
 
 export const DEFAULT_IMAGES: Record<string, string> = {
-  heroPortrait: DEFAULT_HERO_IMAGE,
+  // 1. Hero Section Dedicated Background & Portrait (Decoupled)
+  heroBannerBg: heroBannerBg,
+  heroBgImage: DEFAULT_HERO_BG_IMAGE,
+  heroPortrait: DEFAULT_HERO_BG_IMAGE,
+
+  // 2. What Guides Her Section Quote Card Background (Decoupled)
+  coreValuesQuoteBg: coreValuesQuoteBg,
+  whatGuidesHerCardImage: DEFAULT_WHAT_GUIDES_HER_CARD_IMAGE,
+  whatGuidesHerPhoto: DEFAULT_WHAT_GUIDES_HER_CARD_IMAGE,
+  coreValuesCardImage: DEFAULT_CORE_VALUES_CARD_IMAGE,
+
+  // 3. Meet Phyllis Bio Portrait
   meetPhyllisBio: DEFAULT_BIO_PORTRAIT,
+
+  // 4. Her Story Card Photo
   herStoryCardPhoto: DEFAULT_HER_STORY_PHOTO,
-  whatGuidesHerPhoto: DEFAULT_WHAT_GUIDES_HER_PHOTO,
+
+  // 5. Rooted in Kiambu Photo
   rootedInKiambuPhoto: DEFAULT_ROOTED_IN_KIAMBU_PHOTO,
+
+  // 6. Vision Photo
   visionPhoto5: DEFAULT_VISION_PHOTO5,
 };
 

@@ -6,8 +6,9 @@ import { ImageWithFallback } from './common/ImageWithFallback';
 import { 
   DEFAULT_BIO_PORTRAIT, 
   DEFAULT_HER_STORY_PHOTO, 
-  DEFAULT_WHAT_GUIDES_HER_PHOTO, 
-  DEFAULT_ROOTED_IN_KIAMBU_PHOTO 
+  DEFAULT_ROOTED_IN_KIAMBU_PHOTO,
+  coreValuesQuoteBg,
+  PLACEHOLDER_CORE_VALUES_QUOTE
 } from '../utils/imageUtils';
 
 const candidateBiography = {
@@ -51,8 +52,8 @@ export function Biography() {
   // 2. Her Story Card (Biography / Community)
   const herStoryPhotoSrc = getImage('herStoryCardPhoto', DEFAULT_HER_STORY_PHOTO);
 
-  // 3. What Guides Her Card (Leadership / Values)
-  const whatGuidesHerSrc = getImage('whatGuidesHerPhoto', DEFAULT_WHAT_GUIDES_HER_PHOTO);
+  // 3. What Guides Her Quote Card Background (Leadership / Values) - Dedicated & Isolated via coreValuesQuoteBg
+  const currentCoreValuesQuoteBg = getImage('coreValuesQuoteBg', coreValuesQuoteBg);
 
   // 4. Rooted in Kiambu Card (Grassroots Outreach)
   const rootedInKiambuSrc = getImage('rootedInKiambuPhoto', DEFAULT_ROOTED_IN_KIAMBU_PHOTO);
@@ -288,9 +289,10 @@ export function Biography() {
                 transition={{ duration: 0.8 }}
                 className="bg-[var(--color-brand-black)] rounded-3xl p-10 sm:p-16 relative overflow-hidden shadow-xl"
               >
+                {/* Quote Card Dedicated Background Image (Isolated via coreValuesQuoteBg) */}
                 <ImageWithFallback 
-                  src={whatGuidesHerSrc} 
-                  fallbackSrc={DEFAULT_WHAT_GUIDES_HER_PHOTO}
+                  src={currentCoreValuesQuoteBg} 
+                  fallbackSrc={coreValuesQuoteBg}
                   alt="What Guides Her - Leadership and values presentation" 
                   className="absolute inset-0 w-full h-full object-cover object-top opacity-100 filter contrast-105"
                 />
