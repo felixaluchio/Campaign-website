@@ -76,11 +76,17 @@ export function Vision() {
       {/* A3: Vision In One Glance */}
       <div className="py-24 sm:py-32 bg-gray-50 relative z-10 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="mb-16"
+          >
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[var(--color-brand-black)]">
               Vision In One Glance
             </h3>
-          </div>
+          </motion.div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
             {visionThemes.map((theme, idx) => (

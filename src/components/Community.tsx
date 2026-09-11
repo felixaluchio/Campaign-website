@@ -65,7 +65,13 @@ export function Community() {
           
           {/* B2: Kiambu County Visualization (Map Placeholder) */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 order-2 lg:order-1 hidden md:block">
-            <div className="bg-[var(--color-soft-bg)] aspect-square rounded-[40px] border border-gray-100 flex flex-col items-center justify-center p-8 relative overflow-hidden group">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="bg-[var(--color-soft-bg)] aspect-square rounded-[40px] border border-gray-100 flex flex-col items-center justify-center p-8 relative overflow-hidden group"
+            >
               <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, #000 2px, transparent 2px)', backgroundSize: '32px 32px' }}></div>
               <MapPin className="w-16 h-16 text-[var(--color-primary-green)] mb-6 opacity-50 group-hover:scale-110 transition-transform duration-700" />
               <h3 className="text-2xl font-serif font-bold text-[var(--color-brand-black)] mb-2 relative z-10 text-center">
@@ -74,11 +80,17 @@ export function Community() {
               <p className="text-sm text-gray-500 text-center relative z-10 max-w-xs">
                 [Awaiting official GeoJSON boundary data for Kiambu County constituencies and wards. Do not fabricate geographic boundaries.]
               </p>
-            </div>
+            </motion.div>
           </div>
 
           {/* C: Interactive County Directory */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            className="lg:col-span-7 order-1 lg:order-2"
+          >
             
             {/* D: Search */}
             <div className="mb-8">
@@ -248,21 +260,27 @@ export function Community() {
               )}
             </div>
             
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* B9: County-wide Representation */}
       <div className="mt-24 bg-[var(--color-brand-black)] text-white py-24 sm:py-32 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[var(--color-deep-green)] opacity-30 blur-[100px] pointer-events-none"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+        >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold mb-8">
             One Kiambu. Every Voice Matters.
           </h2>
           <p className="text-xl sm:text-2xl font-serif text-[var(--color-primary-green)] italic leading-relaxed">
             "I will represent residents' concerns and advocate for equitable development across every constituency and ward."
           </p>
-        </div>
+        </motion.div>
       </div>
 
     </section>

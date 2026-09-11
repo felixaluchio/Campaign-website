@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 export function ContactSection() {
   return (
@@ -8,7 +9,12 @@ export function ContactSection() {
         
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          >
             <h2 className="text-4xl font-serif font-bold text-[var(--color-brand-black)] mb-6">Contact the Campaign</h2>
             <p className="text-gray-600 text-lg mb-10 leading-relaxed">
               We are always ready to hear from you. Reach out to our campaign office or drop us a message online.
@@ -55,10 +61,16 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Quick Contact Form */}
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative">
+          <motion.div 
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative"
+          >
             <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-primary-green)] rounded-t-3xl"></div>
             <h3 className="text-2xl font-bold text-[var(--color-brand-black)] mb-8">Send a Message</h3>
             
@@ -100,7 +112,7 @@ export function ContactSection() {
                 Send Message
               </button>
             </form>
-          </div>
+          </motion.div>
 
         </div>
 

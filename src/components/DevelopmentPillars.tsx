@@ -71,7 +71,13 @@ export function DevelopmentPillars() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="w-8 h-[2px] bg-[var(--color-campaign-red)] rounded-full"></span>
             <span className="uppercase tracking-[0.2em] text-xs font-bold text-[var(--color-primary-green)]">
@@ -82,7 +88,7 @@ export function DevelopmentPillars() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[var(--color-brand-black)] mb-6">
             Development Pillars
           </h2>
-        </div>
+        </motion.div>
 
         {/* Pillars List */}
         <div className="space-y-24 sm:space-y-32">

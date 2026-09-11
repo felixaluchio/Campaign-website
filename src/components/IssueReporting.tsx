@@ -184,7 +184,12 @@ export function IssueReporting() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Column: Information & Reporting Action */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          >
             <div className="inline-flex items-center gap-2 bg-[var(--color-campaign-red)] text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8 shadow-md">
               <AlertTriangle className="w-4 h-4" />
               Direct Action
@@ -236,10 +241,16 @@ export function IssueReporting() {
                 </span>
               </motion.div>
             )}
-          </div>
+          </motion.div>
 
           {/* Right Column: Real-Time Live Feed Card */}
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            className="relative"
+          >
             <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl relative z-10 flex flex-col justify-center">
               <div className="flex items-center justify-between mb-6 pb-6 border-b border-gray-100">
                 <div className="font-bold text-[var(--color-brand-black)] text-lg">Recent Public Reports</div>
@@ -278,7 +289,7 @@ export function IssueReporting() {
             
             {/* Background decorative card */}
             <div className="absolute inset-0 bg-[var(--color-deep-green)] rounded-3xl translate-x-4 translate-y-4 -z-10 shadow-xl"></div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

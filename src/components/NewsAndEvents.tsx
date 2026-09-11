@@ -91,7 +91,13 @@ export function NewsAndEvents() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16"
+        >
           <div>
             <div className="text-sm font-semibold tracking-wider uppercase text-[var(--color-primary-green)] mb-4">
               JOIN OUR NEXT RALLIES & MOBILIZATION SESSIONS
@@ -107,7 +113,7 @@ export function NewsAndEvents() {
             <span>View All Campaign Events</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
-        </div>
+        </motion.div>
 
         {/* Events Grid */}
         {isLoading ? (
@@ -144,15 +150,19 @@ export function NewsAndEvents() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featured.map((event) => {
+            {featured.map((event, idx) => {
               const dateObj = new Date(event.date);
               const month = isNaN(dateObj.getTime()) ? 'EVT' : dateObj.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
               const day = isNaN(dateObj.getDate()) ? '•' : dateObj.getDate().toString();
               const year = isNaN(dateObj.getFullYear()) ? '2026' : dateObj.getFullYear().toString();
 
               return (
-                <div 
+                <motion.div 
                   key={event.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                   className="bg-[var(--color-bg-light)] p-8 rounded-3xl border border-gray-100 flex flex-col justify-between hover:border-[var(--color-primary-green)]/30 hover:shadow-xl transition-all group"
                 >
                   <div>
@@ -194,7 +204,7 @@ export function NewsAndEvents() {
                       <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

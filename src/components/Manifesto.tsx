@@ -70,7 +70,13 @@ export function Manifesto() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* B1: Manifesto Introduction */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-6 sm:gap-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-6 sm:gap-8"
+        >
           <div className="max-w-2xl min-w-0">
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
               <span className="w-6 sm:w-8 h-[2px] bg-[var(--color-campaign-red)] rounded-full"></span>
@@ -103,7 +109,7 @@ export function Manifesto() {
               <span>Read Online</span>
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Manifesto Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
