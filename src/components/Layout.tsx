@@ -1,7 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
-import { WhatsAppButton } from './WhatsAppButton';
 import { AIAssistant } from './AIAssistant';
 import { Newsletter } from './shared/Newsletter';
 import { Breadcrumbs } from './shared/Breadcrumbs';
@@ -23,7 +22,6 @@ export function Layout() {
       </main>
       <Newsletter />
       <Footer />
-      <WhatsAppButton />
       <AIAssistant />
       <CookieBanner />
     </div>

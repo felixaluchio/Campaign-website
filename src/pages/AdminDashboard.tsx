@@ -489,7 +489,7 @@ export function AdminDashboard() {
         date: photoForm.date,
         location: photoForm.location || 'Kiambu County',
         locationName: photoForm.location || 'Kiambu County',
-        category: photoForm.category,
+        category: photoForm.category || 'Campaign Event',
         description: photoForm.description,
         imageUrl: primaryImageUrl,
         imageUrls: imageUrls,
@@ -507,7 +507,7 @@ export function AdminDashboard() {
         date: photoForm.date,
         location: photoForm.location || 'Kiambu County',
         locationName: photoForm.location || 'Kiambu County',
-        category: photoForm.category,
+        category: photoForm.category || 'Campaign Event',
         photosCount: imageUrls.length > 0 ? imageUrls.length : (selectedFiles.length > 0 ? selectedFiles.length : 1),
         description: photoForm.description,
         imageUrl: primaryImageUrl,
@@ -549,7 +549,7 @@ export function AdminDashboard() {
 
   const handleVideoSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!videoForm.title || !videoForm.category || !videoForm.date || !videoForm.youtubeUrl) return;
+    if (!videoForm.title || !videoForm.date || !videoForm.youtubeUrl) return;
 
     setIsVideoSubmitting(true);
 
@@ -573,7 +573,7 @@ export function AdminDashboard() {
 
       const videoData = {
         title: videoForm.title,
-        category: videoForm.category,
+        category: videoForm.category || 'General',
         date: videoForm.date,
         duration: '15:00',
         thumbnail: thumbnail,
@@ -588,7 +588,7 @@ export function AdminDashboard() {
 
       setVideoForm({
         title: '',
-        category: 'Keynote Speech',
+        category: 'General',
         date: '',
         youtubeUrl: '',
         summary: ''
@@ -622,7 +622,7 @@ export function AdminDashboard() {
         slug: slug || `event-${Date.now()}`,
         title: eventForm.title,
         description: eventForm.description,
-        category: eventForm.category,
+        category: eventForm.category || 'Town Hall',
         date: eventForm.date,
         startTime: '10:00 AM',
         endTime: '01:00 PM',
@@ -1015,7 +1015,7 @@ export function AdminDashboard() {
                       </div>
 
                       {/* Event Location */}
-                      <div>
+                      <div className="col-span-1 md:col-span-2">
                         <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
                           EVENT LOCATION / VENUE
                         </label>
@@ -1026,25 +1026,6 @@ export function AdminDashboard() {
                           onChange={(e) => setPhotoForm({ ...photoForm, location: e.target.value })}
                           className="bg-slate-950 border border-slate-800 text-slate-200 placeholder-slate-600 rounded-lg p-3 w-full focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
                         />
-                      </div>
-
-                      {/* Category */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                          CATEGORY
-                        </label>
-                        <select
-                          value={photoForm.category}
-                          onChange={(e) => setPhotoForm({ ...photoForm, category: e.target.value })}
-                          className="bg-slate-950 border border-slate-800 text-slate-200 rounded-lg p-3 w-full focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm cursor-pointer"
-                        >
-                          <option value="Rally">Campaign Rally</option>
-                          <option value="Town Hall">Town Hall</option>
-                          <option value="Women Forum">Women Forum</option>
-                          <option value="Youth Mobilization">Youth Mobilization</option>
-                          <option value="Community Visit">Community Visit</option>
-                          <option value="Press Conference">Press Conference</option>
-                        </select>
                       </div>
 
                       {/* Attach Photos (Dropzone) */}
@@ -1266,7 +1247,7 @@ export function AdminDashboard() {
                   <form onSubmit={handleVideoSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       {/* Video Title */}
-                      <div>
+                      <div className="col-span-1 md:col-span-2">
                         <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
                           VIDEO TITLE <span className="text-red-500">*</span>
                         </label>
@@ -1278,26 +1259,6 @@ export function AdminDashboard() {
                           onChange={(e) => setVideoForm({ ...videoForm, title: e.target.value })}
                           className="bg-slate-950 border border-slate-800 text-slate-200 placeholder-slate-600 rounded-lg p-3 w-full focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
                         />
-                      </div>
-
-                      {/* Category */}
-                      <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                          CATEGORY <span className="text-red-500">*</span>
-                        </label>
-                        <select
-                          required
-                          value={videoForm.category}
-                          onChange={(e) => setVideoForm({ ...videoForm, category: e.target.value })}
-                          className="bg-slate-950 border border-slate-800 text-slate-200 rounded-lg p-3 w-full focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm cursor-pointer"
-                        >
-                          <option value="Keynote Speech">Keynote Speech</option>
-                          <option value="Media Interview">Media Interview</option>
-                          <option value="Town Hall">Town Hall</option>
-                          <option value="Grassroots Highlight">Grassroots Highlight</option>
-                          <option value="Youth Empowerment">Youth Empowerment</option>
-                          <option value="Women Forum">Women Forum</option>
-                        </select>
                       </div>
 
                       {/* Event Date */}
@@ -1521,26 +1482,6 @@ export function AdminDashboard() {
                           onChange={(e) => setEventForm({ ...eventForm, county: e.target.value })}
                           className="bg-slate-950 border border-slate-800 text-slate-200 placeholder-slate-600 rounded-lg p-3 w-full focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
                         />
-                      </div>
-
-                      {/* Category */}
-                      <div className="col-span-1 md:col-span-2">
-                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                          CATEGORY
-                        </label>
-                        <select
-                          value={eventForm.category}
-                          onChange={(e) => setEventForm({ ...eventForm, category: e.target.value })}
-                          className="bg-slate-950 border border-slate-800 text-slate-200 rounded-lg p-3 w-full focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm cursor-pointer"
-                        >
-                          <option value="Town Hall">Town Hall</option>
-                          <option value="Women Forum">Women Forum</option>
-                          <option value="Youth Empowerment">Youth Empowerment</option>
-                          <option value="Grassroots Outreach">Grassroots Outreach</option>
-                          <option value="Economic Summit">Economic Summit</option>
-                          <option value="Public Forum">Public Forum</option>
-                          <option value="MOBILIZATION RALLY">MOBILIZATION RALLY</option>
-                        </select>
                       </div>
 
                       {/* Description / Summary */}
