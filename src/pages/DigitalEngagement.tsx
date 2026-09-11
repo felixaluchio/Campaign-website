@@ -17,7 +17,7 @@ export function DigitalEngagement() {
     <div className="pt-20 min-h-screen bg-gray-50 flex flex-col">
       {/* Hero */}
       <section className="bg-[var(--color-brand-black)] py-20 border-b border-gray-100 relative overflow-hidden text-white">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+        <div className="absolute inset-0 bg-noise-pattern opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
             <span className="w-8 h-[2px] bg-[var(--color-primary-green)] rounded-full"></span>
@@ -63,7 +63,7 @@ export function DigitalEngagement() {
                   </button>
                 </div>
               </div>
-              <div className="absolute right-0 bottom-0 w-64 h-64 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none rounded-tl-full mix-blend-overlay"></div>
+              <div className="absolute right-0 bottom-0 w-64 h-64 bg-noise-pattern opacity-10 pointer-events-none rounded-tl-full mix-blend-overlay"></div>
             </div>
 
             {/* Report Issue */}
@@ -130,7 +130,7 @@ export function DigitalEngagement() {
                     Contact Us
                   </span>
                </div>
-               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay"></div>
+               <div className="absolute inset-0 bg-noise-pattern opacity-20 pointer-events-none mix-blend-overlay"></div>
             </Link>
             
           </div>

@@ -62,7 +62,7 @@ export function Biography() {
     <section className="bg-white relative overflow-hidden" id="meet-phyllis">
 
       {/* Background texture & soft elements */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.02] mix-blend-overlay pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-noise-pattern opacity-[0.02] mix-blend-overlay pointer-events-none z-0"></div>
       
       {/* Subtle Topographic Accent */}
       <div className="absolute top-0 right-0 w-full h-full opacity-[0.03] z-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>

@@ -177,7 +177,7 @@ export function IssueReporting() {
   return (
     <section className="py-24 bg-[var(--color-primary-green)] relative overflow-hidden" id="report-issue-section">
       {/* Decorative background */}
-      <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay"></div>
+      <div className="absolute inset-0 opacity-10 bg-noise-pattern mix-blend-overlay"></div>
       <div className="absolute top-0 right-0 w-full h-full bg-[var(--color-deep-green)] clip-path-slant opacity-50"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

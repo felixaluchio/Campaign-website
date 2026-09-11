@@ -9,7 +9,7 @@ export function AssistantCTA() {
 
   return (
     <section className="py-24 bg-[var(--color-soft-bg)] border-y border-[var(--color-light-green)] relative overflow-hidden">
-      <div className="absolute right-0 bottom-0 w-96 h-96 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none rounded-tl-full mix-blend-overlay"></div>
+      <div className="absolute right-0 bottom-0 w-96 h-96 bg-noise-pattern opacity-10 pointer-events-none rounded-tl-full mix-blend-overlay"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <motion.div 

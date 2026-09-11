@@ -46,7 +46,7 @@ export function Footer() {
     <>
       {/* Global Pre-Footer CTA */}
       <section className="bg-[var(--color-primary-green)] relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+        <div className="absolute inset-0 bg-noise-pattern opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-[var(--color-campaign-red)] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[var(--color-deep-green)] rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         
@@ -77,7 +77,7 @@ export function Footer() {
 
       {/* Main Dark Footer */}
       <footer className="bg-[var(--color-brand-black)] text-white relative overflow-hidden" aria-labelledby="footer-heading">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-noise-pattern opacity-10 pointer-events-none mix-blend-overlay"></div>
         
         <h2 id="footer-heading" className="sr-only">Footer</h2>
         

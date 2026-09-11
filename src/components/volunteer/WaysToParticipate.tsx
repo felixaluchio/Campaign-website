@@ -15,7 +15,7 @@ const ways = [
 export function WaysToParticipate() {
   return (
     <section id="participate" className="py-24 bg-[var(--color-primary-green)] text-white relative">
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
+      <div className="absolute inset-0 bg-noise-pattern opacity-10 mix-blend-overlay pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">How Would You Like To Get Involved?</h2>
